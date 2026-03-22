@@ -3,6 +3,7 @@ package com.min.black;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.WindowManager;
+import android.view.View;
 import android.graphics.Color;
 
 public class MainActivity extends Activity {
