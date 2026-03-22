@@ -11,13 +11,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        // Держим экран включенным
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        
-        // Устанавливаем черный фон
         getWindow().getDecorView().setBackgroundColor(Color.BLACK);
-        
-        // Скрываем статус-бар и навигацию (полноэкранный режим)
         getWindow().getDecorView().setSystemUiVisibility(
             View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY |
             View.SYSTEM_UI_FLAG_HIDE_NAVIGATION |
