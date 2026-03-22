@@ -1,9 +1,9 @@
-<manifest xmlns:android="http://schemas.android.com">
-    <application>
-        <activity android:name="com.min.black.MainActivity" android:exported="true">
+<manifest xmlns:a="http://schemas.android.com">
+    <application a:hasCode="true">
+        <activity a:name="${mainActivityName}" a:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action a:name="android.intent.action.MAIN" />
+                <category a:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
