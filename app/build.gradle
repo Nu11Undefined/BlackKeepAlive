@@ -12,24 +12,10 @@ android {
         targetSdk 34
         versionCode 1
         versionName "1.0"
-    }
-
-    // Этот блок сам создаст рабочий манифест без ошибок копирования
-    applicationVariants.all { variant ->
-        variant.outputs.all { output ->
-            def manifestFile = new File(projectDir, "src/main/AndroidManifest.xml")
-            manifestFile.parentFile.mkdirs()
-            manifestFile.text = """<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com">
-    <application android:hasCode="true">
-        <activity android:name="com.min.black.MainActivity" android:exported="true" android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
-</manifest>""".trim()
-        }
+        
+        // Передаем параметры прямо в сборщик, минуя ручную правку XML
+        manifestPlaceholders = [
+            mainActivityName: "com.min.black.MainActivity"
+        ]
     }
 }
